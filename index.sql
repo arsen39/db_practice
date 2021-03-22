@@ -103,6 +103,20 @@ VALUES ('Junior'),
 ('Senior'),
 ('Team lead');
 
+DROP TABLE "positions_to_users"
+
+CREATE TABLE "positions_to_users"(
+  "id" serial PRIMARY KEY,
+  "worker_id" int REFERENCES "workers" ("id"),
+  "position_id" int REFERENCES "positions" ("id")
+);
+
+INSERT INTO "positions_to_users" ("worker_id", "position_id")
+VALUES (1,1),
+(5,1),
+(6,2),
+(7,2);
+
 
 
 
